@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Embedding images</title>
 </head>
 <body>
-    
+    <h1>Embedding Images</h1>
+    <img src="audi.jpeg" alt="Audi Car" loading="lazy"  width="300" height="200">
+    <br>
+    <img src="kailasa.webp" alt="TEMPLE" width="400" height="300" title="Kal Car">
+    <br>
+    <!-- image responsive for the size of the image it my adjust -->
+    <img src="taj-mahal.jpeg" alt="Taj Mahal" width="400" height="300">
+    <img src="small-taj.jpeg" alt="Taj Mahal" srcset="medium-taj.jpeg 768w, large-taj.jpeg 1200w" sizes="(max-width: 600px) 100vw,(max-width:1200px) 50vw, 33vw" width="400" height="300">
 </body>
 </html>
