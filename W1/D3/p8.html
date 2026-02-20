@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal selectors</title>
+    <style>
+         /* The universal selector (*) selects */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: red;
+        }
+        /* grouping selector example */
+        h2, p {
+            color: blue;
+            font-size: larger;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- The universal selector (*) is used to apply the specified styles to all elements on the page. In this case, it sets the margin and padding of all elements to 0, effectively removing any default spacing that browsers may apply. This is often used as a reset to ensure consistent styling across different browsers. -->
+    <h1>All elements have zero margin and padding by default</h1>
+    <p>Paragraph with no margin or padding.</p>
+    <!-- grouping selector example -->
+    <h1>Grouping selector example</h1>
+    <p>This is a paragraph.</p>
+    <h2>This is a heading 2.</h2>
+</body>
+</html>
