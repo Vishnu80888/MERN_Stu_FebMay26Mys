@@ -1,0 +1,23 @@
+body{
+    background-color: blueviolet;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.box{
+    background-color: lightblue;
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+.box2{
+    margin: auto;
+    /*margin: 10px 20px;/* top and bottom 10px, left and right 20px */
+    background-color: lightcoral;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    border: 10px solid black;
+    border-left: 5px dashed red;
+    border-radius: 20px;
+}
