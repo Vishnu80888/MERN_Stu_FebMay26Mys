@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child and Descendant Selectors</title>
+    <style>
+        /* child selector example */
+        div > p {
+            color: green;
+            font-size: larger;
+            font-weight: bold;
+        }
+        /* descendant selector example */
+        div span {
+            color: orange;
+            font-size: larger;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- child selector example -->
+    <div>
+        <p>This is a paragraph inside a div.</p>
+        <section>
+            <p>This is a paragraph inside a section.</p>
+        </section>
+        <span>
+            <p>This is a paragraph inside a span.</p>
+        </span>
+    </div>
+</body>
+</html>
