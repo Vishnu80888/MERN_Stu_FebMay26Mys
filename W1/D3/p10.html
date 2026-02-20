@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes and Pseudo-classes Selectors</title>
+    <style>
+        input [type="text"] {
+            border: 2px solid rgb(255, 6, 6);
+            padding: 5px;
+        }
+        /* Pseudo-classes */
+        button:hover {
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="This input is Styled">
+    <input type="password" placeholder="This input is not Styled">
+    <button>Hover Me</button>
+    
+</body>
+</html>
