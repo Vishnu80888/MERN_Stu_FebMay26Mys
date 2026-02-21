@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning about flex layout</title>
+    <style>
+        .flex-contanier{
+            display: flex;
+            background-color: lightcoral;
+            justify-content:start;
+            align-items:stretch;/*flex-start, flex-end, center, space-between, space-around, space-evenly*/
+            width: 200px;
+            height: 200px;
+            flex-direction:inherit; /*row-reverse, column, column-reverse*/    
+            flex-wrap:wrap;/*nowrap, wrap-reverse,nowrap*/
+    }
+        .flex-item{
+            background-color: lightblue;
+            padding: 10px;
+            margin: 20px;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex layout</h1>
+    <div class="flex-contanier">
+        <div class="flex-item">content 1</div>
+        <div class="flex-item">content 2</div>
+        <div class="flex-item">content 3</div>
+    </div>
+</body>
+</html>
