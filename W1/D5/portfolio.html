@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        nav {
+            display:block;
+            justify-content: space-between;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+
+        }
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .nav-links a:hover {
+            background-color: #777;
+        }
+        .hero-section {
+            padding: 2rem;
+            background-color: #f4f4f4;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 1rem;
+        }
+            .btn {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background-color: #333;
+                color: white;
+                text-decoration: none;
+                margin-top: 1rem;
+            }
+            .about-me {
+                margin-top: 1rem;
+            }
+            section {
+                padding: 2rem;
+            }
+            h2 {
+                margin-bottom: 1rem;
+            }
+            p {
+                line-height: 1.6;
+            }
+                .skills-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1rem;
+                }
+                .skill-card {
+                    background-color: #f4f4f4;
+                    padding: 1rem;
+                    border-radius: 5px;
+                }
+                 .project-container {
+                    background-color: #f4f4f4;
+                    padding: 1rem;
+                    border-radius: 5px;
+                }
+                 table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+                th {
+                    background-color: #333;
+                    color: white;
+                }
+                 .contact {
+                    background-color: #f4f4f4;
+                    padding: 1rem;
+                    border-radius: 5px;
+                }
+                 fieldset {
+                    border: 1px solid #ddd;
+                    padding: 1rem;
+                }
+                 legend {
+                    font-weight: bold;
+                }
+                 label {
+                    display: block;
+                    margin-top: 0.5rem;
+                }
+                    input, textarea {
+                        width: 100%;
+                        padding: 0.5rem;
+                        margin-top: 0.5rem;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                    }
+                    button {
+                        margin-top: 1rem;
+                        padding: 0.5rem 1rem;
+                        background-color: #333;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                    }
+                        button:hover {
+                            background-color: #555;
+                        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Vishnu Mahendra Reddy L</a>
+            <br>
+            <br>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- flexbox used  for Hero section -->
+    <section id="home" class="hero-section">
+        <h1>Welcome to My Portfolio</h1>
+        <h3>Dedicated ,Passionate and motivated Performer.
+A passionate problem-solver with a knack for creativity</h3>
+        <p>Hi, I'm Vishnu Mahendra Reddy L, a passionate developer with experience in web development and software engineering. This portfolio showcases my projects, skills, and contact information. Feel free to explore and get in touch!</p>
+        <img src="D:\MERN_ABC\MERN_Stu_FebMay26Mys\W1\D5\Screenshot 2025-03-15 151831.png" alt="Profile Picture" class="profile-image">
+        <p>software developer,MERN full stack developer</p>
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>  
+    <!-- about section -->
+     <section id="about">
+        <h2>About Me</h2>
+        <article class="about-me">
+            <h3>Full Stack Developer</h3>
+            <h6>I am a software developer with a passion for creating innovative solutions. I have experience in various programming languages and frameworks, and I enjoy working on both front-end and back-end development.</h6>
+            <p>Specializing in MERN stack development with expertise in React. </p>
+            <div class="tags">
+                <span>JavaScript</span>
+                <span>React</span>  
+                <span>Node.js</span>
+                <span>Frontend Development</span>
+        </article>
+        <!-- skills -->
+         <section id="skills">
+            <h2> MY Skills </h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>MERN Stack</h4>
+                    <p>Proficient in MongoDB, Express.js, React, and Node.js for full-stack development.</p>    
+                </div>
+            </div>
+        </section>
+        <!-- my projects  -->
+         <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-container">
+                <h4>Project 2: Pharmacy-Management-System (11/2023 - 01/2024)</h4>
+                <p>-- A pharmacy managementsystem (PMS) is a specialized software designed to streamline and automate various pharmacy operations, including inventory management, prescription processing, billing, and patient record management. The "master" part of "pharmacy-management-system-master" likely refersto the core or primary version of such a system, often including all the essential features and functionalities for managing a pharmacy</p>
+                <h5>project github link</h5>
+                <a href="" class="btn">View Project</a>
+                <br>
+                <h4>Credit Fraud Detection (02/2024 - 03/2024)</h4>
+                <p>--A credit card fraud detection project aimsto identify fraudulent credit card
+transactions using machine learning techniques. The project involves analyzing
+historicaltransaction data, identifying patternsindicative of fraud, and building a
+model to classify new transactions as either legitimate or fraudulent.</p>
+<h5>project github link</h5>
+                <a href="" class="btn">View Project</a>
+                <br>
+                <h4>Cyber Threat Intelligence Using HONEYPOTS</h4>
+                <p>--A Honeypot is a cybersecurity mechanism designed to detect, deflect, or study
+cyber threats. A cyber threatrefersto any potential malicious activity or event that
+can harm digital systems, networks, or data. Cyber threats can come from
+individuals, groups, or automated systemsintending to steal, damage, or disrupt
+digital assets</p>
+                    <h5>project github link</h5>
+                <a href="" class="btn">View Project</a>
+                <br>
+
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Technologies Used</th>
+                </tr>
+                <tr>
+                    <td>Pharmacy Management System</td>
+                    <td>A pharmacy management system (PMS) designed to streamline and automate various pharmacy operations, including inventory management, prescription processing, billing, and patient record management.</td>
+                    <td>Python, Django, MySQL</td>
+                </tr>
+                <tr>
+                    <td>Credit Fraud Detection</td>
+                    <td>A credit card fraud detection project aimed at identifying fraudulent credit card transactions using machine learning techniques.</td>
+                    <td>Python, Scikit-learn, Pandas</td>
+                </tr>
+                <tr>
+                    <td>Cyber Threat Intelligence Using HONEYPOTS</td>
+                    <td>A cybersecurity project that uses honeypots to detect and study cyber threats.</td>
+                    <td>Python, Scapy, Wireshark</td>
+                </tr>
+            </thead>
+            </table>
+        </section>  
+<!-- contact me -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
+            <form class="contact">
+                <fieldset>
+                    <legend>Contact Form</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    <br>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <br><br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                    <br><br>
+                </fieldset>
+                <button type="submit">Send Message</button>
+                
+            </form>
+
+</body>
+</html>
