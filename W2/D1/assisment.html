@@ -18,6 +18,16 @@
     color: blanchedalmond;
 }
 
+.navbar h1 {
+    animation: scroll 10s linear infinite;
+    margin: 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
 .navbar a:hover {
     color: yellow;
 }
@@ -154,7 +164,7 @@
 
 <!-- 1. Sticky Navbar -->
 <div class="navbar">
-    <marquee><h1>House Design</h1></marquee>
+    <h1>House Design</h1>
 </div>
 
 <div class="content">
