@@ -8,20 +8,24 @@
         .animated-box {
             width: 150px;
             height: 150px;
-            background-color: green;
+            background-color: rgb(224, 23, 76);
+            transition: transform 0.5s ease-in-out;
             animation-name: moveFade;
-            animation-duration: 0.2s;
+            animation-duration: 1.5s;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
             animation-direction: alternate;
             animation-fill-mode: both;
         }
+        .animated-box:hover {
+            transform: translate(100px, 50px) rotate(360deg) scale(1.5);
+        }   
     @keyframes moveFade {
         0% {
-            transform: translateX(0);opacity: 1;
+            transform:  scale(1) translateX(0);opacity: 1;
         }
         100% {
-            transform: translateX(200px);opacity: 0.5;
+            transform: scale(0.8) translateX(200px);opacity: 0.5;
         }
     }
     </style>
