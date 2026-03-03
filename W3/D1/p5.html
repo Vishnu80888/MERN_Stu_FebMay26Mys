@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects and Arrays </title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <pre id="out">
+    </pre>
+     <button id="runBtn" class="px-3 py-1 rounded mt-2 mb-2 bg-black text-white">run</button>
+    <script>
+        const out = document.getElementById("out");
+
+        function print(...args){
+        // console
+        console.log(...args);
+        out.textContent+=args.join("")+"\n";   
+    }
+
+        function clearOut(){
+            out.textContent = "";
+            const user = {name:"Mahesh",age:24};
+            print("User=",JSON.stringify(user));
+
+            const myArray = [1,3,4,5,6,7];
+            myArray.push(6);
+            print("Is it an Array:?",Array.isArray(myArray));
+        }
+
+        function run(){
+            clearOut();
+
+
+
+        }
+
+        document.getElementById("runBtn").addEventListener
+    ("click",run);
+    
+    </script>
+</body>
+</html>
