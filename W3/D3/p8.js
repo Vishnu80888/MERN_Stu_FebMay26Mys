@@ -10,4 +10,4 @@ console.log(jsonString)
 
 //parseing
 const parsedObject = JSON.parse(jsonString);
-console.log(parsedObject)
+console.log(parsedObject);
