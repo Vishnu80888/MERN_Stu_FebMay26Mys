@@ -104,7 +104,6 @@ async function processBookingAsync(movie,showtime,seatCount){
 }
 
 module.exports = {
-    currentBooking,
     clearCurrentBooking,
     processBooking,
     processBookingAsync,
