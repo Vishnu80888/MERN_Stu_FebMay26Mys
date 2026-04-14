@@ -27,4 +27,4 @@ emitter.on("operationFailed", (msg) =>
   console.log(chalk.red(msg))
 );
 
-module.exports = emitter;
+module.exports = emitter; 
