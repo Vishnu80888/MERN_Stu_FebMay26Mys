@@ -32,4 +32,4 @@ module.exports = {
   createPost,
   posts,
   likePost
-};
+}; 
