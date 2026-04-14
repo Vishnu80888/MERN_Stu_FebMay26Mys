@@ -8,7 +8,11 @@ emitter.on("sessionStarted", () =>
 );
 
 emitter.on("profileCreated", (user) =>
-  console.log(chalk.green(`Profile created for ${user.name}`))
+  console.log(chalk.green(`Profile created: ${user.name}`))
+);
+
+emitter.on("profileUpdated", () =>
+  console.log(chalk.yellow("Profile updated"))
 );
 
 emitter.on("connectionRequested", () =>
@@ -20,11 +24,19 @@ emitter.on("connectionAccepted", () =>
 );
 
 emitter.on("postCreated", () =>
-  console.log(chalk.green("Post created successfully"))
+  console.log(chalk.green("Post created"))
+);
+
+emitter.on("postLiked", () =>
+  console.log(chalk.blue("Post liked"))
+);
+
+emitter.on("feedViewed", () =>
+  console.log(chalk.cyan("Feed viewed"))
 );
 
 emitter.on("operationFailed", (msg) =>
   console.log(chalk.red(msg))
 );
 
-module.exports = emitter; 
+module.exports = emitter;

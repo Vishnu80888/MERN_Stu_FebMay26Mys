@@ -1,12 +1,14 @@
 const emitter = require("./events");
 
-const posts = [];
-let postId = 1;
+let posts = [];
+let id = 1;
 
 async function createPost(user, content) {
   try {
+    if (!user) throw new Error("Login required");
+
     const post = {
-      id: postId++,
+      id: id++,
       author: user.id,
       content,
       likes: [],
@@ -16,6 +18,7 @@ async function createPost(user, content) {
 
     posts.push(post);
     emitter.emit("postCreated");
+
   } catch (err) {
     emitter.emit("operationFailed", err.message);
   }
@@ -32,4 +35,4 @@ module.exports = {
   createPost,
   posts,
   likePost
-}; 
+};

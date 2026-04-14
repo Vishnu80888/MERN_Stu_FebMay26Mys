@@ -1,9 +1,18 @@
 const { posts } = require("./posts");
+const emitter = require("./events");
 
-function getFeed(user) {
-  return posts
-    .filter(p => user.connections.includes(p.author))
-    .sort((a, b) => b.timestamp - a.timestamp);
+async function getFeed(user) {
+  try {
+    const feed = posts
+      .filter(p => user.connections.includes(p.author))
+      .sort((a, b) => b.timestamp - a.timestamp);
+
+    emitter.emit("feedViewed");
+    return feed;
+
+  } catch (err) {
+    emitter.emit("operationFailed", err.message);
+  }
 }
 
-module.exports = { getFeed }; 
+module.exports = { getFeed };
