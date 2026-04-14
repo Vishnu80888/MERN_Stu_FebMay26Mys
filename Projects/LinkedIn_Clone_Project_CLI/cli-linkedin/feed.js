@@ -6,4 +6,4 @@ function getFeed(user) {
     .sort((a, b) => b.timestamp - a.timestamp);
 }
 
-module.exports = { getFeed };
+module.exports = { getFeed }; 
