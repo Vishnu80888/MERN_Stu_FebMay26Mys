@@ -11,14 +11,13 @@ async function createPost(user, content) {
       id: id++,
       author: user.id,
       content,
+      timestamp: new Date(),
       likes: [],
-      comments: [],
-      timestamp: new Date()
+      comments: []
     };
 
     posts.push(post);
     emitter.emit("postCreated");
-
   } catch (err) {
     emitter.emit("operationFailed", err.message);
   }
@@ -31,8 +30,9 @@ function likePost(userId, post) {
   }
 }
 
-module.exports = {
-  createPost,
-  posts,
-  likePost
-};
+function addComment(userId, post, text) {
+  post.comments.push({ userId, text, timestamp: new Date() });
+  emitter.emit("commentAdded");
+}
+
+module.exports = { createPost, posts, likePost, addComment };

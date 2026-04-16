@@ -15,8 +15,4 @@ function addEducation(user, edu) {
   emitter.emit("profileUpdated");
 }
 
-module.exports = {
-  addSkill,
-  addExperience,
-  addEducation
-};
+module.exports = { addSkill, addExperience, addEducation };

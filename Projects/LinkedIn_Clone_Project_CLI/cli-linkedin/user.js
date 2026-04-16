@@ -3,6 +3,8 @@ let currentUser = null;
 let id = 1;
 
 function createUser(name, headline) {
+  if (!name || !headline) throw new Error("Invalid input");
+
   const user = {
     id: id++,
     name,
@@ -12,14 +14,17 @@ function createUser(name, headline) {
     education: [],
     connections: []
   };
+
   users.push(user);
   currentUser = user;
   return user;
 }
 
 function loginUser(userId) {
-  currentUser = users.find(u => u.id === userId);
-  return currentUser;
+  const user = users.find(u => u.id === userId);
+  if (!user) return null;
+  currentUser = user;
+  return user;
 }
 
 function getCurrentUser() {

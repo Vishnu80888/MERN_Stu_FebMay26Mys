@@ -6,20 +6,12 @@ function sendRequest(sender, receiver) {
   return Promise.resolve()
     .then(() => {
       if (!receiver) throw new Error("User not found");
-    })
-    .then(() => {
-      if (sender.id === receiver.id)
-        throw new Error("Cannot connect yourself");
-    })
-    .then(() => {
-      if (sender.connections.includes(receiver.id))
-        throw new Error("Already connected");
+      if (sender.id === receiver.id) throw new Error("Cannot connect yourself");
+      if (sender.connections.includes(receiver.id)) throw new Error("Already connected");
     })
     .then(() => {
       const exists = requests.find(
-        r => r.sender === sender.id &&
-             r.receiver === receiver.id &&
-             r.status === "pending"
+        r => r.sender === sender.id && r.receiver === receiver.id && r.status === "pending"
       );
       if (exists) throw new Error("Request already sent");
     })
@@ -37,9 +29,7 @@ function sendRequest(sender, receiver) {
 async function acceptRequest(receiver, senderId) {
   try {
     const req = requests.find(
-      r => r.sender === senderId &&
-           r.receiver === receiver.id &&
-           r.status === "pending"
+      r => r.sender === senderId && r.receiver === receiver.id && r.status === "pending"
     );
 
     if (!req) throw new Error("Request not found");
@@ -54,14 +44,35 @@ async function acceptRequest(receiver, senderId) {
     if (sender) sender.connections.push(receiver.id);
 
     emitter.emit("connectionAccepted");
-
   } catch (err) {
     emitter.emit("operationFailed", err.message);
   }
 }
 
+async function rejectRequest(receiver, senderId) {
+  try {
+    const req = requests.find(
+      r => r.sender === senderId && r.receiver === receiver.id && r.status === "pending"
+    );
+
+    if (!req) throw new Error("Request not found");
+
+    req.status = "rejected";
+
+    emitter.emit("connectionRejected");
+  } catch (err) {
+    emitter.emit("operationFailed", err.message);
+  }
+}
+
+function getRequests(userId) {
+  return requests.filter(r => r.receiver === userId && r.status === "pending");
+}
+
 module.exports = {
   sendRequest,
   acceptRequest,
+  rejectRequest,
+  getRequests,
   requests
 };
