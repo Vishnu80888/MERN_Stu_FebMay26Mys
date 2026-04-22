@@ -1,67 +1,66 @@
-const movie = requrie("../models/Movie");
+const movieService = require("../services/movie.service");
 
-//create Movie 
-exports.createMovie = async (data) => {
-    return await Movie.create(data);
+// Create Movie
+exports.createMovie = async (req,res,next) => {
+    try{
+        const movie = await movieService.createMovie(req.body);
+
+        res.status(201).json({
+            success:true,
+            message:"Movie created successfully",
+            data:movie,
+        });
+    }
+    catch(error){
+        next(error);
+    }
 };
 
-//get Movies
-exports.getMovies = async (query) => {
-    let { page = 1, limit = 5, genre, rating, search, sort } = query;
+// Get Movies
+exports.getMovies = async (req,res,next) => {
+    try{
+        const result = await movieService.getMovies(req.query);
 
-    page = number(page);
-    limit = Number(limit);
-
-    const fliter = { isActive: True };
-    if (genre) {
-        filter.genre = genre;
+        res.status(200).json({
+            success:true,
+            message:"Movie List fetched",
+            data:result,
+        });
     }
-    if (rating) {
-        filter.rating = { $gte: Number(rating) };
+    catch(error){
+        next(error);
     }
-    if (search) {
-        filter.$text = { $search: search };
-    }
-    let mongoQuery = movie.find(filter);
-    if (sort) {
-        mongoQuery = mongoQuery.sort(sort);
-
-    } else {
-        mongoquery = mongoQuery.sort("-createdAt");
-    }
-    const skip = (page - 1) * limit;
-    mongoQuery = mongoQuery.skip(skip).limit(limit);
-    const movies = await mongoQuery;
-    const total = await movie.countDocuments(filter);
-    return {
-        movies,
-        pagination: {
-            page,
-            limit,
-            total,
-
-        },
-
-    };
 };
-// Update movie
-exports.updateMovie = async (id,data) => {
-    const movie = await Movie.findByIdAndUpdate(id,data,{
-        new:true,
-        runValidators:true,
-    });
 
-    if(!movie)
-        throw new Error("Movie not found");
+// Update Movie
+exports.updateMovie = async (req,res,next) => {
+    try{
+        const movie = await movieService.updateMovie(
+            req.params.id,
+            req.body
+        );
 
-    return movie;
+        res.status(200).json({
+            success:true,
+            message:"Movie updated successfully",
+            data:movie,
+        });
+    }
+    catch(error){
+        next(error);
+    }
 };
-//Delete Movie
-exports.deleteMovie = async (id) => {
-    //Soft delete
-    const movie = await Movie.findByIdAndUpdate(id,{
-        isActive:false,
-    }); 
-    if(!movie)
-        throw new Error("Movie not found");
+// Delete Movie
+exports.deleteMovie = async (req,res,next) => {
+    try{
+        await movieService.deleteMovie(req.params.id);
+
+        res.status(200).json({
+            success:true,
+            message:"Movie deleted successfully",
+        });
+    }
+    catch(error){
+        next(error);
+    }
 };
