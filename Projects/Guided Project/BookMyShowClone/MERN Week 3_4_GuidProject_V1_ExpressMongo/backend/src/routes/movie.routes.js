@@ -1,17 +1,16 @@
-const express = require ("express");
+const express = require("express");
 const router = express.Router();
-const { protect } = require("../middleware/auth.middleware");
-const {authorizeRoles} = require("../middleware/role.middleware");
 
-//Public route : get all movies 
-router.get("/",async (req,res)=>{
-    res.send("Get all movies");
- });
+const {protect} = require("../middleware/auth.middleware");
+const {authorize} = require("../middleware/role.middleware");
 
-//Admin route only
+//Public route
+router.get("/",(req,res)=>{
+    res.send("Get Movies");
+});
 
-router.post("/",protect,authorizeRoles("admin"),(req,res)=>{
-    res.send("Create a movie");
- });
-
- module.exports = router;
+// Admin only route
+router.post("/",protect,authorize("admin"),(req,res)=>{
+    res.send("Create movie");
+});
+module.exports = router;
