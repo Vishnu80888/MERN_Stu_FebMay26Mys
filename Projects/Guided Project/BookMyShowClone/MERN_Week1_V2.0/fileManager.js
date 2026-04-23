@@ -139,7 +139,6 @@ module.exports = {
     appendBookingsAsync,
     removeLogDirectorySync,
     deleteArchivedLogSync,
-    renameArchivedLogSync,
-    appendLogAsync
+    renameArchivedLogSync
 
 }
