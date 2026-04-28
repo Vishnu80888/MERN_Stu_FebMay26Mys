@@ -119,13 +119,26 @@ import './App.css'
 //   )
 // }
 
+//example for taking JSX 
+// function App() {
+//   return (
+//     <div>
+//       <h1>React Introduction</h1>
+//       <p>React simplifies UI creation through resuable components</p>
+//     </div>
+//   );
+// }
+
 function App() {
+  const user = "Vishnu";
+  const marks = 79;
   return (
     <div>
-      <h1>React Introduction</h1>
-      <p>React simplifies UI creation through resuable components</p>
+      {/* Expressions within JSX */}
+      {/* { curly brackets }: in jSX means: switch from JSX/HTML -like syntax into JavaScript */}
+      <h1>Hello ,{user}</h1>
+      <p>Updated marks: {marks+10}</p>
     </div>
   );
 }
-
 export default App
