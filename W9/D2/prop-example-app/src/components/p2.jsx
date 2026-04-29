@@ -1,21 +1,24 @@
-// props destructuring 
 import React from "react";
 
+// Child Component
 function UserProfile({ username, skill }) {
-    return (
-        <div>
-            <p>User: {username}</p>
-            <p>Skill: {skill}</p>
-        </div>
-    );
+  return (
+    <div className="profile-card">
+      <p><strong>User:</strong> {username}</p>
+      <p><strong>Skill:</strong> {skill}</p>
+    </div>
+  );
 }
 
-// Parent component
+// Parent Component
 export function PropDestructuring() {
-    return (
-        <>
-            <h2>Prop Destructuring</h2>
-            <UserProfile username="Vishnu" skill="React" />
-        </>
-    );
+  return (
+    <div className="container">
+      <h2>Prop Destructuring</h2>
+
+      <UserProfile username="Vishnu" skill="React" />
+      <UserProfile username="Ravi" skill="Node.js" />
+      <UserProfile username="Anjali" skill="MongoDB" />
+    </div>
+  );
 }
