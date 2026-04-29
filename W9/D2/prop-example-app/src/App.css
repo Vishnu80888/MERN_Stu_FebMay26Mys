@@ -18,3 +18,17 @@
 .card p {
   color: #666;
 }
+
+.setBorder {
+  border: 2px solid #630000; /* blue */
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 10px;
+  background: #94bff0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.setBorder:hover {
+  transform: scale(1.03);
+}

@@ -9,14 +9,16 @@ import "./App.css";
 // import { ObjectsAndArrayProps } from "./components/p7";
 // import { PropsImmutability } from "./components/p8";
 // import { FunctionProps } from "./components/p10";
-import { PropTypesDemo } from "./components/p11";
+// import { PropTypesDemo } from "./components/p11";
+import { HOCExample } from "./components/p12";
+
 
 import PropsState from "./components/p9"; // ✅ fixed
 
 function App() {
   return (
     <div className="container">
-      <PropTypesDemo/>
+      <HOCExample/>
     </div>
   );
 }
