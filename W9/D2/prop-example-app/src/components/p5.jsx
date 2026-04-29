@@ -1,4 +1,4 @@
-import React,{ useState} from "react";
+import React,{ useState } from "react";
 //State Lifting : moving shared state up to the closest common parent
 //We use this :
 //Multiple child components need to share the same data
