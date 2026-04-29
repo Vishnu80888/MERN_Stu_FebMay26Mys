@@ -1,13 +1,27 @@
 import React from "react";
-import "./App.css";
-import CompositionDemo from "./components/p6"; // ✅ default import
+import './App.css'
+// import { WelcomeCard } from "./components/p1";
+// import { PropDestructuring } from "./components/p2";
+// import { PropsChildren } from "./components/p3";
+// import { PropDrillingDemo } from "./components/p4";
+// import { SharedStateParent } from "./components/p5";
 
+//  import { CompositionDemo } from "./components/p6";
+  // import { ObjectsAndArrayProps } from "./components/p7";
+  import { PropsImmutability } from "./components/p8";
 function App() {
   return (
     <div className="container">
-      <CompositionDemo />
+      {/* <WelcomeCard/>  */}
+      {/* <PropDestructuring/>
+      <PropsChildren/> */}
+      {/* <PropDrillingDemo/> */}
+      {/* <SharedStateParent/> */}
+      {/* <CompositionDemo/> */}
+      {/* <ObjectsAndArrayProps/> */}
+      <PropsImmutability/>
     </div>
   );
 }
 
-export default App;
+export default App

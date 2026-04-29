@@ -1,3 +1,6 @@
+//props destructuring
+// a syntax of ES6 approch  that allow us  to unpack
+//prop object drictly into its values 
 import React from "react";
 
 // Child Component
