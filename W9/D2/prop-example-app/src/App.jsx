@@ -8,7 +8,10 @@ import './App.css'
 
 //  import { CompositionDemo } from "./components/p6";
   // import { ObjectsAndArrayProps } from "./components/p7";
-  import { PropsImmutability } from "./components/p8";
+  // import { PropsImmutability } from "./components/p8";
+  import { PropsState } from "./components/p9";
+
+
 function App() {
   return (
     <div className="container">
@@ -19,7 +22,8 @@ function App() {
       {/* <SharedStateParent/> */}
       {/* <CompositionDemo/> */}
       {/* <ObjectsAndArrayProps/> */}
-      <PropsImmutability/>
+      {/* <PropsImmutability/> */}
+      <PropsState/>
     </div>
   );
 }
